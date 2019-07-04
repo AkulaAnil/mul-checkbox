@@ -1,0 +1,28 @@
+<button class="btn btn-primary btn-sm mr-3" (click)="edit()">Edit</button>
+<button class="btn btn-success btn-sm" (click)="save()">Save</button>
+<br><br>
+
+<div *ngIf="show">
+  <mat-checkbox type="checkbox"  [(ngModel)]="selecteIfChecker.checked" (change)="onEdit()">Checker</mat-checkbox>
+  <div class="left">
+    <li class="selectAll"><mat-checkbox type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll()"></mat-checkbox>
+      <strong> Select/UnSelect All</strong>
+    </li><hr>
+    <li class="select"><mat-checkbox type="checkbox" [(ngModel)]="checked" disabled>Dashboard</mat-checkbox></li>
+    <li class="select"><mat-checkbox type="checkbox" (change)="app()" [(ngModel)]="approval"  #selecteIfChecker disabled>Approval</mat-checkbox></li>
+    <li class="select" *ngFor="let name of names || realNames">
+      <mat-checkbox type="checkbox" [(ngModel)]="name.selected" (change)="checkIfAllSelected()"> {{ name.name }}</mat-checkbox>
+    </li>
+  </div>
+   
+  <div class="side">
+    <li class="selectAll"><mat-checkbox type="checkbox" [(ngModel)]="selectedAll2" (change)="selectAll2()"></mat-checkbox>
+      <strong> Select/UnSelect All</strong>
+    </li><hr>
+    <li class="select" *ngFor="let name of names2">
+      <mat-checkbox type="checkbox" [(ngModel)]="name.selected" (change)="checkIfAllSelected2()"> {{ name.name }}</mat-checkbox>
+    </li>
+  </div>
+</div>
+
+

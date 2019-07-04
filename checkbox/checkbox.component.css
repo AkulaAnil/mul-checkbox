@@ -1,0 +1,22 @@
+.select {
+    list-style: none;
+    margin: 5px 10px;
+}
+.selectAll {
+    display: block;
+    margin: 5px 10px;
+}
+
+
+.left {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    border: 1px solid greenyellow;
+}
+.side {
+    position: absolute;
+    top: 80px;
+    left: 23%;
+    border: 1px solid greenyellow;
+}
